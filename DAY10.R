@@ -84,10 +84,16 @@ ggplot( data = iris)  +
 
 # 색및 모양 및 제목 주기.
 
-ggplot( data = iris, mapping = aes( x = Petal.Length , y = Petal.Width, color = Species, shape = Species ) ) +       # 색은 종 마다 다르게 해랴. color를 aes는 색분리 지정.  # shape는 모양 바꿔라       
+ggplot( data = iris, 
+        mapping = aes( x = Petal.Length ,
+                       y = Petal.Width, 
+                       color = Species, 
+                       shape = Species ) ) +       # 색은 종 마다 다르게 해랴. color를 aes는 색분리 지정.  # shape는 모양 바꿔라       
   geom_point( size = 3)+                                                                            # 점의 크기는 3
   ggtitle(" 꽃잎의 길이와 폭 ")+                                                                    # 제목
-  theme( plot.title = element_text( size = 25, face = "bold", color = 'red'))                       # theme는 제목의 형식.
+  theme( plot.title = element_text( size = 25, 
+                                    face = "bold", 
+                                    color = 'red'))    # theme는 제목의 형식.
 
 
 # 범주형은 문자열이어도 숫자로 변환하여 작동한다 ( 품종의 경우 ). 컬러는 1,2,3으로 지정된다.
@@ -126,9 +132,6 @@ head(df)
 ggplot( df, aes( x = year, y = cnt )) +
   geom_line( col = "red")
 
-
-ggplot( df, aes( x = year, y = cnt )) +
-  geom_line( col = "red ")
 
 
 
@@ -181,7 +184,7 @@ ggplot( mtcars, aes ( x = wt, y = mpg )) +
 
 
 # treemap #
-# 크기순으로 표기하고 싶을 때.
+# 
 # 데이터셋을 기준으로 전체를 보여주고 싶을때.
 
 install.packages( "treemap")
@@ -305,29 +308,6 @@ p <- data %>%
 
 pp <- ggplotly(p, tooltip="text")
 pp
-
-
-#$@#$#$#$#$#$#$#$#
-
-
-
-
-
-
-
-
-
-
-
-p <- ggplot(diamonds, aes(price)) 
-p + stat_bin(aes(fill=cut),geom="bar") 
-
-
-p+ stat_bin(aes(fill=..density..), geom="bar")
-
-p <- ggplot(diamonds, aes(price))
-p + stat_bin(aes(fill=cut), geom='area')
-p + stat_bin(aes(color = cut, size = ..density..), geom='point')
 
 
 
