@@ -40,6 +40,7 @@ ds
 # 변수 4개로 산점도를 그려보기 -> 4차원이니 차원을 축소 시켜야 
 
 # 차원 축소 
+
 # 1. 중복 데이터 제거 
 
 dup = which( duplicated(ds))    # 중복데이터가 있는지 없는지 확인하기. 있으면 제거해주어야함 
@@ -222,7 +223,8 @@ dim(wind)
 str(wind)
 
 
-sp <- sample( 1:nrow( wind ), 50 )         # sample 함수로 50개 추출 
+sp <- sample( 1:nrow( wind ), 50 )     # sample( 범위 , 갯수 )  
+sp                                     # sample 함수로 50개 추출 
 df <- wind[ sp, ] 
 head(df)
 
